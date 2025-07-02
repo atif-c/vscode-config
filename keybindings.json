@@ -1,0 +1,13 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+shift+oem_2",
+        "command": "editor.action.blockComment",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+a",
+        "command": "-editor.action.blockComment",
+        "when": "editorTextFocus && !editorReadonly"
+    }
+]
