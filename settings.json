@@ -3,12 +3,8 @@
     "cSpell.language": "en-GB",
     "editor.cursorBlinking": "phase",
     "editor.cursorSmoothCaretAnimation": "on",
-    "editor.fontFamily": "Monaspace Krypton Var, Consolas, 'Courier New', monospace",
-    "editor.fontSize": 16,
     "editor.formatOnSave": true,
     "editor.lineHeight": 1.5,
-    "editor.minimap.autohide": true,
-    "editor.minimap.enabled": false,
     "editor.mouseWheelZoom": true,
     "editor.smoothScrolling": true,
     "editor.wordWrap": "on",
@@ -16,13 +12,11 @@
     "svelte.enable-ts-plugin": true,
     "terminal.integrated.mouseWheelZoom": true,
     "vsicons.dontShowNewVersionMessage": true,
-    "window.zoomLevel": -2,
     "workbench.editor.empty.hint": "hidden",
     "workbench.iconTheme": "vscode-icons",
     "workbench.settings.applyToAllProfiles": ["editor.fontSize"],
     "workbench.startupEditor": "none",
     "prettier.tabWidth": 4,
-    "prettier.singleQuote": true,
 
     "[css]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -49,7 +43,25 @@
         "editor.defaultFormatter": "svelte.svelte-vscode"
     },
     "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnPaste": false
-    }
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "[markdown]": {
+        "diffEditor.ignoreTrimWhitespace": false
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "window.zoomLevel": -2,
+    "editor.fontSize": 6,
+    "prettier.arrowParens": "avoid",
+    "prettier.singleAttributePerLine": true,
+    "prettier.singleQuote": true,
+    "editor.fontFamily": "Monaspace Krypton Var, Consolas, 'Courier New', monospace",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "cSpell.userWords": ["bindable"],
+    "workbench.editor.enablePreview": false,
+    "terminal.integrated.fontSize": 16,
+    "git.suggestSmartCommit": false,
+    "editor.minimap.enabled": false
 }
