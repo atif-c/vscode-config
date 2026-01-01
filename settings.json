@@ -52,7 +52,7 @@
     },
     "javascript.updateImportsOnFileMove.enabled": "always",
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "window.zoomLevel": -2,
+    "window.zoomLevel": -1,
     "editor.fontSize": 6,
     "prettier.arrowParens": "avoid",
     "prettier.singleAttributePerLine": true,
