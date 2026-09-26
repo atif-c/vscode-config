@@ -1,67 +1,88 @@
 {
-    "chat.commandCenter.enabled": false,
-    "cSpell.language": "en-GB",
-    "editor.cursorBlinking": "phase",
-    "editor.cursorSmoothCaretAnimation": "on",
-    "editor.formatOnSave": true,
-    "editor.lineHeight": 1.5,
-    "editor.mouseWheelZoom": true,
-    "editor.smoothScrolling": true,
-    "editor.wordWrap": "on",
-    "files.autoSave": "afterDelay",
-    "svelte.enable-ts-plugin": true,
-    "terminal.integrated.mouseWheelZoom": true,
-    "vsicons.dontShowNewVersionMessage": true,
-    "workbench.editor.empty.hint": "hidden",
-    "workbench.iconTheme": "vscode-icons",
-    "workbench.settings.applyToAllProfiles": ["editor.fontSize"],
-    "workbench.startupEditor": "none",
-    "prettier.tabWidth": 4,
+	"chat.commandCenter.enabled": false,
+	"cSpell.language": "en-GB",
+	"editor.cursorBlinking": "phase",
+	"editor.cursorSmoothCaretAnimation": "on",
+	"editor.formatOnSave": true,
+	"editor.lineHeight": 1.5,
+	"editor.mouseWheelZoom": true,
+	"editor.smoothScrolling": true,
+	"editor.wordWrap": "on",
+	"files.autoSave": "afterDelay",
+	"svelte.enable-ts-plugin": true,
+	"terminal.integrated.mouseWheelZoom": true,
+	"vsicons.dontShowNewVersionMessage": true,
+	"workbench.editor.empty.hint": "hidden",
+	"workbench.iconTheme": "vscode-icons",
+	"workbench.settings.applyToAllProfiles": ["editor.fontSize"],
+	"workbench.startupEditor": "none",
+	"prettier.tabWidth": 4,
 
-    "[css]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[dockercompose]": {
-        "editor.defaultFormatter": "ms-azuretools.vscode-containers"
-    },
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[rust]": {
-        "editor.defaultFormatter": "rust-lang.rust-analyzer"
-    },
-    "[svelte]": {
-        "editor.defaultFormatter": "svelte.svelte-vscode"
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "workbench.secondarySideBar.defaultVisibility": "hidden",
-    "[markdown]": {
-        "diffEditor.ignoreTrimWhitespace": false
-    },
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "window.zoomLevel": -1,
-    "editor.fontSize": 6,
-    "prettier.arrowParens": "avoid",
-    "prettier.singleAttributePerLine": true,
-    "prettier.singleQuote": true,
-    "editor.fontFamily": "Monaspace Krypton Var, Consolas, 'Courier New', monospace",
-    "diffEditor.ignoreTrimWhitespace": false,
-    "cSpell.userWords": ["bindable"],
-    "workbench.editor.enablePreview": false,
-    "terminal.integrated.fontSize": 16,
-    "git.suggestSmartCommit": false,
-    "editor.minimap.enabled": false
+	"[css]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[dockercompose]": {
+		"editor.defaultFormatter": "ms-azuretools.vscode-containers"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[rust]": {
+		"editor.defaultFormatter": "rust-lang.rust-analyzer"
+	},
+	"[svelte]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"workbench.secondarySideBar.defaultVisibility": "hidden",
+	"[markdown]": {
+		"diffEditor.ignoreTrimWhitespace": true
+	},
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"editor.fontSize": 16,
+	"prettier.arrowParens": "avoid",
+	"prettier.singleAttributePerLine": true,
+	"prettier.singleQuote": true,
+	"editor.fontFamily": "Monaspace Krypton Var, Consolas, 'Courier New', monospace",
+	"diffEditor.ignoreTrimWhitespace": false,
+	"cSpell.userWords": ["bindable"],
+	"git.suggestSmartCommit": false,
+	"prettier.jsxSingleQuote": true,
+	"svelte.plugin.svelte.format.config.singleQuote": true,
+	"window.zoomLevel": -1,
+	"workbench.panel.showLabels": false,
+	"terminal.integrated.profiles.windows": {
+		"PowerShell": {
+			"path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+		},
+		"Command Prompt": {
+			"path": ["${env:windir}\\Sysnative\\cmd.exe", "${env:windir}\\System32\\cmd.exe"],
+			"args": [],
+			"icon": "terminal-cmd"
+		},
+		"Git Bash": {
+			"source": "Git Bash",
+			"icon": "terminal-git-bash"
+		},
+		"Ubuntu (WSL)": {
+			"path": "C:\\WINDOWS\\System32\\wsl.exe",
+			"args": ["-d", "Ubuntu"]
+		}
+	},
+	"terminal.integrated.defaultProfile.windows": "PowerShell",
+	"chat.disableAIFeatures": true,
+	"window.density.layout": "compact"
 }
