@@ -1,23 +1,4 @@
 {
-	"chat.commandCenter.enabled": false,
-	"cSpell.language": "en-GB",
-	"editor.cursorBlinking": "phase",
-	"editor.cursorSmoothCaretAnimation": "on",
-	"editor.formatOnSave": true,
-	"editor.lineHeight": 1.5,
-	"editor.mouseWheelZoom": true,
-	"editor.smoothScrolling": true,
-	"editor.wordWrap": "on",
-	"files.autoSave": "afterDelay",
-	"svelte.enable-ts-plugin": true,
-	"terminal.integrated.mouseWheelZoom": true,
-	"vsicons.dontShowNewVersionMessage": true,
-	"workbench.editor.empty.hint": "hidden",
-	"workbench.iconTheme": "vscode-icons",
-	"workbench.settings.applyToAllProfiles": ["editor.fontSize"],
-	"workbench.startupEditor": "none",
-	"prettier.tabWidth": 4,
-
 	"[css]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
@@ -36,6 +17,9 @@
 	"[jsonc]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
+	"[markdown]": {
+		"diffEditor.ignoreTrimWhitespace": false
+	},
 	"[rust]": {
 		"editor.defaultFormatter": "rust-lang.rust-analyzer"
 	},
@@ -45,44 +29,84 @@
 	"[typescript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
+	"chat.commandCenter.enabled": false,
+	"chat.disableAIFeatures": true,
+	"cSpell.language": "en-GB",
+	"cSpell.userWords": ["bindable"],
+	"diffEditor.ignoreTrimWhitespace": false,
+	"editor.cursorBlinking": "phase",
+	"editor.cursorSmoothCaretAnimation": "on",
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"workbench.secondarySideBar.defaultVisibility": "hidden",
-	"[markdown]": {
-		"diffEditor.ignoreTrimWhitespace": true
-	},
-	"javascript.updateImportsOnFileMove.enabled": "always",
-	"typescript.updateImportsOnFileMove.enabled": "always",
+	"editor.fontFamily": "Monaspace Krypton Var, Consolas, 'Courier New', monospace",
 	"editor.fontSize": 16,
+	"editor.formatOnSave": true,
+	"editor.lineHeight": 1.5,
+	"editor.mouseWheelZoom": true,
+	"editor.smoothScrolling": true,
+	"editor.wordWrap": "on",
+	"files.autoSave": "afterDelay",
+	"git.suggestSmartCommit": false,
+	"javascript.updateImportsOnFileMove.enabled": "always",
 	"prettier.arrowParens": "avoid",
+	"prettier.jsxSingleQuote": true,
 	"prettier.singleAttributePerLine": true,
 	"prettier.singleQuote": true,
-	"editor.fontFamily": "Monaspace Krypton Var, Consolas, 'Courier New', monospace",
-	"diffEditor.ignoreTrimWhitespace": false,
-	"cSpell.userWords": ["bindable"],
-	"git.suggestSmartCommit": false,
-	"prettier.jsxSingleQuote": true,
+	"prettier.tabWidth": 4,
+	"svelte.enable-ts-plugin": true,
 	"svelte.plugin.svelte.format.config.singleQuote": true,
-	"window.zoomLevel": -1,
-	"workbench.panel.showLabels": false,
-	"terminal.integrated.profiles.windows": {
-		"PowerShell": {
-			"path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+	"terminal.integrated.defaultProfile.linux": "tmux",
+	"terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
+	"terminal.integrated.mouseWheelZoom": true,
+	"terminal.integrated.profiles.linux": {
+		"bash": {
+			"icon": "terminal-bash",
+			"path": "bash"
 		},
-		"Command Prompt": {
-			"path": ["${env:windir}\\Sysnative\\cmd.exe", "${env:windir}\\System32\\cmd.exe"],
-			"args": [],
-			"icon": "terminal-cmd"
+		"fish": {
+			"path": "fish"
 		},
-		"Git Bash": {
-			"source": "Git Bash",
-			"icon": "terminal-git-bash"
+		"pwsh": {
+			"icon": "terminal-powershell",
+			"path": "pwsh"
 		},
-		"Ubuntu (WSL)": {
-			"path": "C:\\WINDOWS\\System32\\wsl.exe",
-			"args": ["-d", "Ubuntu"]
+		"tmux": {
+			"path": "/usr/bin/tmux"
+		},
+		"zsh": {
+			"path": "zsh"
 		}
 	},
-	"terminal.integrated.defaultProfile.windows": "PowerShell",
-	"chat.disableAIFeatures": true,
-	"window.density.layout": "compact"
+	"terminal.integrated.profiles.windows": {
+		"Command Prompt": {
+			"args": [],
+			"icon": "terminal-cmd",
+			"path": ["${env:windir}\\Sysnative\\cmd.exe", "${env:windir}\\System32\\cmd.exe"]
+		},
+		"Git Bash": {
+			"icon": "terminal-git-bash",
+			"source": "Git Bash"
+		},
+		"PowerShell": {
+			"icon": "terminal-powershell",
+			"path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+			"source": "PowerShell"
+		},
+		"Ubuntu (WSL)": {
+			"args": ["-d", "Ubuntu"],
+			"path": "C:\\WINDOWS\\System32\\wsl.exe"
+		}
+	},
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"vsicons.dontShowNewVersionMessage": true,
+	"window.density.layout": "compact",
+	"window.zoomLevel": -1,
+	"workbench.activityBar.compact": true,
+	"workbench.activityBar.location": "top",
+	"workbench.editor.empty.hint": "hidden",
+	"workbench.iconTheme": "vscode-icons",
+	"workbench.panel.showLabels": false,
+	"workbench.secondarySideBar.defaultVisibility": "hidden",
+	"workbench.settings.applyToAllProfiles": ["editor.fontSize"],
+	"workbench.sideBar.location": "right",
+	"workbench.startupEditor": "none"
 }
