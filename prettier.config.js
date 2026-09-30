@@ -4,7 +4,8 @@ const config = {
 	printWidth: 100,
 	singleQuote: true,
 	trailingComma: 'none',
-	useTabs: true
+	useTabs: true,
+	plugins: ['prettier-plugin-jsdoc', '@ianvs/prettier-plugin-sort-imports']
 };
 
 export default config;
