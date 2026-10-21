@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # push.sh — live VS Code -> repo (source of truth: live).
-# No prompt. Overwrites repo files with live state. Never touches live files.
+# Overwrites repo files with live state.
+# Copied files are formatted with the repo Prettier config after writing.
 set -euo pipefail
 
 REPO="$(cd "$(dirname "$0")" && pwd)"
@@ -28,6 +29,8 @@ MACHINE_SETTINGS="$HOME/.vscode-server/data/Machine/settings.json"
 
 copied=0
 skipped=0
+formatted=0
+format_files=()
 
 note_copy() { # $1 = label
   copied=$((copied + 1))
@@ -37,12 +40,16 @@ note_skip() { # $1 = label
   skipped=$((skipped + 1))
   echo "skipped (not present live): $1"
 }
+note_format() { # $1 = repo file to format with repo Prettier config
+  format_files+=("$1")
+}
 
 # --- settings.json / keybindings.json ---
 for f in settings.json keybindings.json; do
   if [ -f "$USER_DIR/$f" ]; then
     cp -f "$USER_DIR/$f" "$REPO/$f"
     note_copy "$f"
+    note_format "$REPO/$f"
   else
     note_skip "$f"
   fi
@@ -100,6 +107,9 @@ if [ -d "$USER_DIR/snippets" ]; then
   # Copy contents (dir currently empty); -r handles any nested files.
   cp -r "$USER_DIR/snippets/." "$REPO/snippets/" 2>/dev/null || true
   note_copy "snippets/ ($(find "$REPO/snippets" -type f 2>/dev/null | wc -l | tr -d ' ') files)"
+  while IFS= read -r -d '' src_snip; do
+    note_format "$src_snip"
+  done < <(find "$REPO/snippets" -type f -print0 2>/dev/null)
 else
   note_skip "snippets/"
 fi
@@ -118,11 +128,15 @@ if [ -d "$USER_DIR/profiles" ]; then
       if [ -f "$src_profile/$f" ]; then
         mkdir -p "$dest"
         cp -f "$src_profile/$f" "$dest/$f"
+        note_format "$dest/$f"
       fi
     done
     if [ -d "$src_profile/snippets" ]; then
       mkdir -p "$dest/snippets"
       cp -r "$src_profile/snippets/." "$dest/snippets/" 2>/dev/null || true
+      while IFS= read -r -d '' src_snip; do
+        note_format "$src_snip"
+      done < <(find "$dest/snippets" -type f -print0 2>/dev/null)
     fi
     if [ -d "$dest" ]; then
       # Drop anything excluded that may have slipped in (belts and braces).
@@ -150,6 +164,7 @@ fi
 if [ -f "$MACHINE_SETTINGS" ]; then
   cp -f "$MACHINE_SETTINGS" "$REPO/machine-settings.json"
   note_copy "machine-settings.json"
+  note_format "$REPO/machine-settings.json"
 else
   : >"$REPO/machine-settings.json"
   note_skip "machine-settings.json (wrote empty file)"
@@ -168,6 +183,24 @@ if [ -d "$WSL_EXT_DIR" ]; then
 fi
 echo "extensions-wsl.txt: $(wc -l <"$REPO/extensions-wsl.txt" | tr -d ' ') entries"
 
+# --- format copied repo files with repo Prettier config ---
+if [ "${#format_files[@]}" -gt 0 ]; then
+  if [ -x "$REPO/node_modules/.bin/prettier" ]; then
+    if "$REPO/node_modules/.bin/prettier" \
+      --config "$REPO/prettier.config.js" \
+      --ignore-unknown \
+      --log-level warn \
+      --write "${format_files[@]}"; then
+      formatted="${#format_files[@]}"
+      echo "formatted (prettier): $formatted files"
+    else
+      echo "warning: prettier failed; repo files left unformatted" >&2
+    fi
+  else
+    echo "skipped prettier: node_modules/.bin/prettier not found"
+  fi
+fi
+
 # --- summary ---
 echo "---"
-echo "push done: $copied copied, $skipped skipped. Repo: $REPO"
+echo "push done: $copied copied, $skipped skipped, $formatted formatted. Repo: $REPO"
