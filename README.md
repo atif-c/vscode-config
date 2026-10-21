@@ -10,9 +10,9 @@ Copies your computer setup into this folder. Overwrites files here, never change
 ./push.sh
 ```
 
-The script asks for your Windows username at runtime
-(`Windows username:` prompt, or set `WIN_USERNAME` non-interactively).
-It never hardcodes a username. Run it from this folder. Overwrites in this folder:
+The script asks for your Windows username at runtime (`Windows username:` prompt, or set
+`WIN_USERNAME` non-interactively). It never hardcodes a username. Run it from this folder.
+Overwrites in this folder:
 
 - `settings.json`
 - `keybindings.json`
@@ -26,7 +26,8 @@ It never hardcodes a username. Run it from this folder. Overwrites in this folde
 
 ## Restore (pull)
 
-Copies this folder back into VS Code. Shows what it will touch, then asks `[y/N]`. Typing `N` stops it.
+Copies this folder back into VS Code. Shows what it will touch, then asks `[y/N]`. Typing `N` stops
+it.
 
 Warning: if you type `y`, it overwrites your live VS Code settings.
 
@@ -34,14 +35,14 @@ Warning: if you type `y`, it overwrites your live VS Code settings.
 ./pull.sh
 ```
 
-The script asks for your Windows username at runtime
-(`Windows username:` prompt, or set `WIN_USERNAME` non-interactively).
-It only adds missing extensions, never removes extras.
+The script asks for your Windows username at runtime (`Windows username:` prompt, or set
+`WIN_USERNAME` non-interactively). It only adds missing extensions, never removes extras.
 
 ## Manual copy (if scripts can't run)
 
-Live Windows folder: `%APPDATA%\Code\User\` = `/mnt/c/Users/<USERNAME>/AppData/Roaming/Code/User/` (replace `<USERNAME>` with your Windows username; the scripts ask for it automatically)
-This folder = repo root where `push.sh` lives.
+Live Windows folder: `%APPDATA%\Code\User\` = `/mnt/c/Users/<USERNAME>/AppData/Roaming/Code/User/`
+(replace `<USERNAME>` with your Windows username; the scripts ask for it automatically) This folder
+= repo root where `push.sh` lives.
 
 | What         | Save: computer -> repo                                                                                                    | Restore: repo -> computer                                                |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
@@ -67,6 +68,8 @@ Extensions (WSL, run inside WSL):
 cat extensions-wsl.txt | xargs -L1 code --install-extension
 ```
 
-`Default.code-profile`: in VS Code go to Profiles > Import, pick the file. Export it the same way to save.
+`Default.code-profile`: in VS Code go to Profiles > Import, pick the file. Export it the same way to
+save.
 
-Fonts: `Monaspace Krypton Var` is installed on Windows itself, not copied here. Install it by hand on a new computer. Saved terminal paths (`powershell.exe`, `wsl.exe -d Ubuntu`) are Windows-only.
+Fonts: `Monaspace Krypton Var` is installed on Windows itself, not copied here. Install it by hand
+on a new computer. Saved terminal paths (`powershell.exe`, `wsl.exe -d Ubuntu`) are Windows-only.
